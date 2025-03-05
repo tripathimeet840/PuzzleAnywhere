@@ -52,7 +52,7 @@ public class LoadingScript : MonoBehaviour
         {
 
             
-            Debug.Log(" else");
+            //Debug.Log(" else");
         }
     }
 
