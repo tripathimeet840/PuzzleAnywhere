@@ -10,6 +10,7 @@ public class BoxCreator : MonoBehaviour
    // ARPlaneManager planeManager;
     [SerializeField]
     GameObject box;
+
     
 
     // Start is called before the first frame update
@@ -26,7 +27,19 @@ public class BoxCreator : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Instantiate(box,this.gameObject.transform.position,Quaternion.identity);
+        Debug.Log("ON mOuse Down ");
+        if (ApplicationManager.Instance == null)
+        {
+            Debug.Log("nullll >>>>>>>>>>>>>>>>>>>>>> Application Manager");
+        }
+        else
+        {
+
+            Debug.Log("<color=green>NOT NULLLLL >>>>>>>>>>>>>>>>>>>>>> Application Manager</color>");
+        }
+
+        ApplicationManager.Instance.ExecuteSpawn(this.gameObject.transform);
+        //Instantiate(box, this.gameObject.transform.position, Quaternion.identity);
     }
 
 

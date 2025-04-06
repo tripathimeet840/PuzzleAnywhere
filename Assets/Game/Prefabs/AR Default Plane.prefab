@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3376299003476807509}
   - component: {fileID: 13298127031719379}
   - component: {fileID: 1115423312411108874}
-  - component: {fileID: 808437876275377130}
+  - component: {fileID: 7543408850434819113}
   m_Layer: 0
   m_Name: AR Default Plane
   m_TagString: Untagged
@@ -117,7 +117,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1a110d32af21aa4d872c707dfcc6043, type: 2}
+  - {fileID: 2100000, guid: 28601631023a9004fbd6a4ca740d1fe9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -257,16 +257,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TrackingStateVisibilityThreshold: 1
   m_HideSubsumed: 1
---- !u!114 &808437876275377130
+--- !u!114 &7543408850434819113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8880114819284726606}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7285cefc4ea2e1c46a79b16293b0d933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  box: {fileID: 2685260721903681714, guid: 16a3bb0edba043049bd35db6293a6c8d, type: 3}
+  box: {fileID: 494526265491397008, guid: 1e3b8526ca2c41841be712951e676d98, type: 3}
