@@ -30,7 +30,6 @@ public class ApplicationManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
 
-
     }
     // Start is called before the first frame update
     void Start()

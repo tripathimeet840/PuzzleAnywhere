@@ -23,7 +23,12 @@ public class GameManager : MonoBehaviour
     List<ARRaycastHit> arHits = new List<ARRaycastHit>();
 
     [SerializeField]
-    List<PlayingModelsCaptain> models ;
+    List<PlayingModelsCaptain> alphabets;
+
+    [SerializeField]
+    List<PlayingModelsCaptain> numericals;
+
+    //List<Models> models;
 
     [SerializeField]
     ARRaycastManager raycastManager;
@@ -154,7 +159,7 @@ public class GameManager : MonoBehaviour
     public void GameDataExecution(Transform spawnPoition)
     {
         Debug.Log("  SpawnBattlefield >>>>>>>>>>>>>>>>>>> ");
-        Debug.Log("  SpawnBattlefield Models  >>>>>>>>>>>>>>>>>>> " + models[0].gameObject.name);
+        Debug.Log("  SpawnBattlefield Models  >>>>>>>>>>>>>>>>>>> " + alphabets[0].gameObject.name);
 
         selectedType = 0;
 
@@ -182,12 +187,27 @@ public class GameManager : MonoBehaviour
         
         Debug.Log(" <color = pink > models present in touch click >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> </color>");
 
-        spawnedBattleField = Instantiate(models[type], vector3.position, rot);
+        //spawnedBattleField = Instantiate(models[type], vector3.position, rot);
         if (spawnedBattleField != null)
         {
-            spawned = true;
-            ClearPlane();
-            Debug.Log(spawnedBattleField.name);
+            if(selectedType == 0) 
+            {
+                spawnedBattleField = Instantiate(alphabets[type], vector3.position, rot);
+                spawned = true;
+                ClearPlane();
+                Debug.Log(spawnedBattleField.name);
+
+            }
+            else
+            {
+                spawnedBattleField = Instantiate(numericals[type], vector3.position, rot);
+                spawned = true;
+                ClearPlane();
+                Debug.Log(spawnedBattleField.name);
+            }
+
+
+           
 
         }
         else
@@ -232,5 +252,11 @@ public class GameManager : MonoBehaviour
     //    }
     //}
     #endregion
+
+    //public class Models
+    //{
+    //    public List<PlayingModelsCaptain> modelsType;
+    //}
+    //public List<First> nestedList = new List<First>();
 
 }
