@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     PlayingModelsCaptain spawnedBattleField;
 
+    [SerializeField]
+    string currentAplhabet;
+
     bool spawned;
     private GameObject planeIndicatorInstance;
     private GameObject defaultPlaneIndicator;
@@ -89,8 +92,12 @@ public class GameManager : MonoBehaviour
         //    Debug.LogWarning("<color=red>Application Manager is Null</color>");
         //    return;
         //}
-       // GameDataExecution();
+        // GameDataExecution();
 
+        ///sets the current string to use by playingCaptain to spawn Models
+
+        currentAplhabet = StringDictionary.A;
+        ApplicationManager.Instance.currentAplhabet = currentAplhabet;
 
 
     }
@@ -98,10 +105,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    SpawnBattlefield(Vector3.zero, Quaternion.identity);
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameDataExecution(this.gameObject.transform);
+
+        }
 
         //Debug.Log(" arcamera " + arCamera.name);
         //Ray rayOrigin = arCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
@@ -167,7 +175,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Execution");
             SpawnBattlefield(spawnPoition, Quaternion.identity,selectedType);
-            Debug.Log(" name " + raycastManager.raycastPrefab.gameObject.name);
+           // Debug.Log(" name " + raycastManager.raycastPrefab.gameObject.name);
             //raycastManager.raycastPrefab = models[0].gameObject ;
             //Debug.Log(" name after replacement >>> " + raycastManager.raycastPrefab.gameObject.name);
 
@@ -185,11 +193,11 @@ public class GameManager : MonoBehaviour
     {
 
         
-        Debug.Log(" <color = pink > models present in touch click >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> </color>");
+        Debug.Log("<color=pink> models present in touch click >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> </color>");
 
         //spawnedBattleField = Instantiate(models[type], vector3.position, rot);
-        if (spawnedBattleField != null)
-        {
+        //if (spawnedBattleField != null)
+        //{
             if(selectedType == 0) 
             {
                 spawnedBattleField = Instantiate(alphabets[type], vector3.position, rot);
@@ -209,11 +217,11 @@ public class GameManager : MonoBehaviour
 
            
 
-        }
-        else
-        {
-            Debug.Log("   GB NUll ????????>>>");
-        }
+        //}
+        //else
+        //{
+        //    Debug.Log("   GB NUll ????????>>>");
+        //}
     }
 
     private void ClearPlane()

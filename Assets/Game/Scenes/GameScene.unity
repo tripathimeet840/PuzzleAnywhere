@@ -294,8 +294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   array: 0
   startinglevel: 0
-  models:
-  - {fileID: 1076543986666940948, guid: bc9783bdf345fa74b84da47a32c4d347, type: 3}
+  alphabets:
+  - {fileID: 1076543986666940948, guid: d89a622b5cb63f5429ac83ba59d8a003, type: 3}
+  numericals: []
   raycastManager: {fileID: 1574145400}
   planeManager: {fileID: 1574145402}
   arCamera: {fileID: 892927018}

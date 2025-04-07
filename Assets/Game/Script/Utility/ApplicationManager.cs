@@ -13,6 +13,8 @@ public class ApplicationManager : MonoBehaviour
     public int selectedtype = 0;
     public int lastPlayedObject = 0;
 
+    public string currentAplhabet;
+
     #endregion
 
     #region Private Var
