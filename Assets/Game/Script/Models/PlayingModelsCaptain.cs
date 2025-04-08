@@ -12,7 +12,7 @@ public class PlayingModelsCaptain : MonoBehaviour
 
 
     [SerializeField]
-    PlayinModels[] selectedPrefabs;
+    List<PlayinModels> selectedPrefabs = new List<PlayinModels>();
 
     [SerializeField]
     List<string> selectedPrefabsName = new List<string>();
@@ -99,14 +99,19 @@ public class PlayingModelsCaptain : MonoBehaviour
     {
 
         Debug.Log(" ObjectSpawn Start >>>>>>>>>>>>>>>>>>>>>>>>>>>>>" );
-        for (int i = 0; i <= selectedPrefabsName.Count; i++)
+        for (int i = 0; i < selectedPrefabsName.Count; i++)
         {
-            preFab = Resources.Load<GameObject>(selectedPrefabsName[i]); 
-            temp = Instantiate(preFab, PlayinModels[i].localPosition,Quaternion.identity);
-            selectedPrefabs[i] = temp.GetComponent<PlayinModels>();
+            preFab = Resources.Load<GameObject>(selectedPrefabsName[i]);
+            Debug.LogWarning("paying models pos " + PlayinModels[i].position+ "paying models Localpos " + PlayinModels[i].localPosition);
+            temp = Instantiate(preFab, PlayinModels[i].localPosition,Quaternion.identity,this.gameObject.transform);
+            Debug.LogWarning("  temp POS >>"+temp.transform.position+"playuing Models local pos " + PlayinModels[i].localPosition); 
+            temp.transform.position = PlayinModels[i].localPosition;
+            Debug.LogWarning("  temp POS 2>>"+temp.transform.position);  
+            selectedPrefabs.Add(temp.GetComponent<PlayinModels>());
+            selectedPrefabs[i].transform.localPosition = PlayinModels[i].localPosition;
         }
 
-
+        Debug.LogWarning(" selected prefab 1 pos" + selectedPrefabs[0].transform.position+ " selected prefab 1 LOcalpos" + selectedPrefabs[0].transform.localPosition);
         //    Debug.Log(" Playing Models Start >>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + gameManager);
         //    GameObject myPrefab = Resources.Load<GameObject>("Apple");
         //    GameObject instance = Instantiate(myPrefab, this.transform.position, Quaternion.identity);
