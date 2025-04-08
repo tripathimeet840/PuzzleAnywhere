@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayinModels : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    
     void Start()
     {
         
@@ -14,5 +16,22 @@ public class PlayinModels : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnMouseDown()
+    {
+        Debug.Log(" collision name >>>>" + this.gameObject.name);
+
+
+        if (ApplicationManager.Instance.currentAplhabet == this.gameObject.name)
+        {
+            Debug.Log(" Right >>>>>");
+
+        }
+        else
+        {
+            Debug.Log(" wrong >>>>>");
+        }
+
     }
 }

@@ -10,6 +10,8 @@ public class TestingScript : MonoBehaviour
     void Start()
     {
 
+        Debug.Log(" name   >>>>" + this.gameObject.name);
+
         //for(i = 'A';i<= 'Z';i++)
         //{
 
@@ -22,12 +24,24 @@ public class TestingScript : MonoBehaviour
         //GameObject myPrefab = Resources.Load<GameObject>("Apple");
         //GameObject instance = Instantiate(myPrefab,this.transform.position,Quaternion.identity);
 
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log(" collision name >>>>"+this.gameObject.name);
+    //}
+
+    private void OnMouseDown()
+    {
+        Debug.Log(" collision name >>>>" + this.gameObject.name);
+
     }
 }
