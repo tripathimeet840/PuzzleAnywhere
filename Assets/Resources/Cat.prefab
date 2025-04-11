@@ -824,6 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3523f1734b8aa4fa2822e50f598e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelName: Cat
 --- !u!54 &2679448136089772975
 Rigidbody:
   m_ObjectHideFlags: 0

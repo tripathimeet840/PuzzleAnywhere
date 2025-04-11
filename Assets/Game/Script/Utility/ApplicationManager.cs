@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ApplicationManager : MonoBehaviour
 {
@@ -28,8 +29,16 @@ public class ApplicationManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-
+        //Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            //DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         DontDestroyOnLoad(this.gameObject);
 
     }
@@ -70,6 +79,26 @@ public class ApplicationManager : MonoBehaviour
     }
 
 
+    int jp = 0;
+    string tempstring;
+    public void IncreaseLevel(string sceneName)
+    {
+        jp = 1;
+        for (char i = 'A'; i <= 'Z'; i++)
+        {
+            if (currentAplhabet == StringDictionary.charValues[i])
+            {
+                Debug.Log(" char values before" + StringDictionary.charValues[i] );
+                i++;
+                Debug.Log(" char values after " + StringDictionary.charValues[i] );
+                currentAplhabet = StringDictionary.charValues[i];
+                Debug.Log("   new current alphabet >>>>>>>>>>>" + currentAplhabet );
+                SceneManager.LoadScene(sceneName);
+                return;
+            }
+            jp++;
+        }
+    }
 
     #endregion
 }

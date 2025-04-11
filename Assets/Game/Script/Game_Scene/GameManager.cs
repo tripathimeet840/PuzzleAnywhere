@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityEngine.XR.ARFoundation;
 
@@ -53,6 +54,16 @@ public class GameManager : MonoBehaviour
     private GameObject defaultPlaneIndicator;
     #endregion
 
+
+    #region UI
+
+    [Header("UI")]
+
+    public GameObject pop_UpPanel;
+    public GameObject wrongPanel;
+
+    #endregion
+
     #region Unity Callbacks
 
     private void Awake()
@@ -95,13 +106,13 @@ public class GameManager : MonoBehaviour
         // GameDataExecution();
 
         ///sets the current string to use by playingCaptain to spawn Models
-
-        currentAplhabet = StringDictionary.A;
-        ApplicationManager.Instance.currentAplhabet = currentAplhabet;
+        
+        //currentAplhabet = StringDictionary.A;
+        //ApplicationManager.Instance.currentAplhabet = currentAplhabet;
 
 
     }
-    bool temp = false;
+    //bool temp = false;
     // Update is called once per frame
     void Update()
     {
@@ -239,6 +250,31 @@ public class GameManager : MonoBehaviour
         //}
     }
     #endregion
+
+    #region UI Callbacks
+
+    public void ReplayBTN()
+    {
+        SceneManager.LoadScene(StringDictionary.Gamescene);
+    }
+
+    public void NextBtn()
+    {
+        Debug.LogWarning(" next btrn ");
+        ApplicationManager.Instance.IncreaseLevel(StringDictionary.Gamescene);
+        //SceneManager.LoadScene(StringDictionary.Gamescene);
+    }
+
+    public void HomeBtn()
+    {
+        Debug.LogWarning(" Home btrn ");
+
+        ApplicationManager.Instance.IncreaseLevel(StringDictionary.Homescene);
+        //SceneManager.LoadScene(StringDictionary.Homescene);
+    }
+
+    #endregion
+
 
     #region AR function
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TestingScript : MonoBehaviour
 {
@@ -44,4 +45,24 @@ public class TestingScript : MonoBehaviour
         Debug.Log(" collision name >>>>" + this.gameObject.name);
 
     }
+
+
+    //public void ReplayBTN()
+    //{
+
+    //    SceneManager.LoadScene(StringDictionary.Gamescene);
+
+    //}
+
+    //public void NextBtn()
+    //{
+    //    ApplicationManager.Instance.IncreaseLevel();
+    //    SceneManager.LoadScene(StringDictionary.Gamescene);
+    //}
+
+    //public void HomeBtn()
+    //{
+    //    ApplicationManager.Instance.IncreaseLevel();
+    //    SceneManager.LoadScene(StringDictionary.Homescene);
+    //}
 }

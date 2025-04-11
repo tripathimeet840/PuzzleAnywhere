@@ -21,7 +21,7 @@ public class PlayingModelsCaptain : MonoBehaviour
     void Start()
     {
 
-        ApplicationManager.Instance.GameManager = gameManager;
+        gameManager = ApplicationManager.Instance.GameManager;
 
 
         //??>>>>>> Demo of prefab loading models from the resources folder or directory
@@ -37,11 +37,6 @@ public class PlayingModelsCaptain : MonoBehaviour
         //Debug.Log(" starty model captain POS " + this.gameObject.transform.position);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
 
 
