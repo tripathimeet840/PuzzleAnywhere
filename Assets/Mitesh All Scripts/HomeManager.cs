@@ -122,6 +122,11 @@ public class HomeManager : MonoBehaviour
 
     }
 
+    public void ARSCENE()
+    {
+        SceneManager.LoadScene(2);
+    }
+
 
 
     public void QuitBtn()
