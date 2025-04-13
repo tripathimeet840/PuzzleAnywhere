@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,18 +12,16 @@ public class LoadingScript : MonoBehaviour
 
     void Start()
     {
-        if(slider.value == slider.minValue && loadingComplete == false)
-        {
-           // IncreaseSliderValue(slider.value);
-            InvokeRepeating("IncreaseSliderValue", 0,1);
-        }
-            
-
+        //if (slider.value == slider.minValue && loadingComplete == false)
+        //{
+            // IncreaseSliderValue(slider.value);
+            InvokeRepeating("IncreaseSliderValue", 0, 1);
+        //}
     }
 
     void Update()
     {
-        
+
 
 
     }
@@ -35,23 +31,21 @@ public class LoadingScript : MonoBehaviour
 
         value = slider.value;
         value = value + 0.1f;
-       // yield return new WaitForSeconds(1);
+        // yield return new WaitForSeconds(1);
         slider.value = value;
 
-
-        if (loadingComplete == false && slider.value == slider.maxValue)
+        //if (loadingComplete == false && slider.value == slider.maxValue)
+        if (slider.value == slider.maxValue)
         {
-            Debug.Log(" if");
+            //Debug.Log(" if");
 
-            loadingComplete = true;
+            // loadingComplete = true;
             SceneManager.LoadScene(1);
-            
+
         }
         else
         {
-
-            
-            //Debug.Log(" else");
+            Debug.Log("else");
         }
     }
 
