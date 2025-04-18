@@ -33,6 +33,7 @@ public class StringDictionary : MonoBehaviour
     public static string Z = "Zebra";
     public static string Homescene = "HomeScene";
     public static string Gamescene = "GameScene";
+    public static string LastPlayed = "LastPlayed";
     
 
     public static Dictionary<char, string> charValues = new Dictionary<char, string>()

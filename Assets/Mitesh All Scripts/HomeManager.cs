@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,9 +19,13 @@ public class HomeManager : MonoBehaviour
     public List<NumericHandler> numHandlers;
 
     int m;
+    string m_name;  
 
     private void Start()
     {
+
+        Debug.LogWarning("Playprefsss >>>>>>>> " + ApplicationManager.Instance.GetInt(StringDictionary.LastPlayed));
+
         numbergenerete();
         alfabetgenerete();  
     }
@@ -38,6 +43,7 @@ public class HomeManager : MonoBehaviour
             numClone.Button.onClick.RemoveAllListeners();
             numClone.Button.onClick.AddListener(() =>
             { 
+               ApplicationManager.Instance.currentAplhabet = numClone.Text.ToString();
                SceneManager.LoadScene(2);
             });
         }
@@ -57,9 +63,14 @@ public class HomeManager : MonoBehaviour
             alfaClone.Button.onClick.RemoveAllListeners();
             alfaClone.Button.onClick.AddListener(() =>
             {
+
+                StringGenerator(alfaClone.Text.text);
+               
                 SceneManager.LoadScene(2);
             });
         }
+
+        LevelUnlockChecker();
 
     }
     
@@ -139,5 +150,53 @@ public class HomeManager : MonoBehaviour
 #if PLATFORM_ANDROID
         Application.Quit();
 #endif
+    }
+
+
+    /// <summary>
+    /// used to generate the current alphabet string using character of text selected
+    /// </summary>
+    string tepppp;
+    private void StringGenerator(string stringDict)
+    {
+
+        tepppp = StringDictionary.charValues[Convert.ToChar(stringDict)];
+
+        Debug.Log("  sleected text >>>" + tepppp);
+
+        ApplicationManager.Instance.currentAplhabet = tepppp;
+
+    }
+
+    /// <summary>
+    /// Used to unlock the levels icon by checking the completed levels
+    /// </summary>
+    string templevelCharacter;
+    int j = 0;
+    private void LevelUnlockChecker()
+    {
+        templevelCharacter = ApplicationManager.Instance.currentAplhabet.Remove(1);
+        j = 0;
+        for (char i = 'A'; i <= 'Z'; i++)
+        {
+
+            if (ApplicationManager.Instance.currentAplhabet == StringDictionary.A) 
+            {
+                return;
+            }
+            else
+            {
+                alfabetHandlers[j].AbcLockOnOff(false);
+                alfabetHandlers[j].AbcTickOnOff(true);
+                j++;
+                if (i.ToString() == templevelCharacter)
+                {
+                    Debug.LogWarning("  templevelCharacter  >>>>>>" + templevelCharacter);
+                    alfabetHandlers[j-1].AbcTickOnOff(false);
+                    return;
+
+                }
+            }
+        }
     }
 }

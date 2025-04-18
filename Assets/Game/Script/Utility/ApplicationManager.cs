@@ -46,6 +46,8 @@ public class ApplicationManager : MonoBehaviour
     void Start()
     {
         selectedtype = 0;
+
+        PlayerPrefs.GetString(StringDictionary.LastPlayed, StringDictionary.A);
     }
 
     // Update is called once per frame
@@ -92,6 +94,7 @@ public class ApplicationManager : MonoBehaviour
                 i++;
                 Debug.Log(" char values after " + StringDictionary.charValues[i] );
                 currentAplhabet = StringDictionary.charValues[i];
+                SetInt(StringDictionary.LastPlayed,currentAplhabet);
                 Debug.Log("   new current alphabet >>>>>>>>>>>" + currentAplhabet );
                 SceneManager.LoadScene(sceneName);
                 return;
@@ -100,5 +103,21 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
+    #region PlayPref Allotment
+
+    public void SetInt(string key, string value)
+    {
+        PlayerPrefs.SetString(key, value);
+    }
+    public string GetInt(string key)
+    {
+        return PlayerPrefs.GetString(key, StringDictionary.A);
+    }
+
     #endregion
+
+
+    #endregion
+
+
 }
