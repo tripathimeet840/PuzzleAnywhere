@@ -1977,6 +1977,7 @@ GameObject:
   - component: {fileID: -6122543441494420527}
   - component: {fileID: -1095268840774661586}
   - component: {fileID: 2452005636770864958}
+  - component: {fileID: -7322145480081864308}
   m_Layer: 0
   m_Name: Elephant
   m_TagString: Untagged
@@ -2013,6 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3523f1734b8aa4fa2822e50f598e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelName: 
 --- !u!54 &-1095268840774661586
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2061,6 +2063,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 3.5, z: 5}
   m_Center: {x: 0, y: 2, z: 0.5}
+--- !u!95 &-7322145480081864308
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8337996170425888539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67ead779cd103324fb3e343c88d53eb7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8724150652150660255
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject pop_UpPanel;
     public GameObject wrongPanel;
+    public TextMeshProUGUI AlphabetIcon;
 
     #endregion
 
@@ -78,6 +80,8 @@ public class GameManager : MonoBehaviour
 
        
         ApplicationManager.Instance.GameManager = this;
+
+        AlphabetIcon.text = ApplicationManager.Instance.currentAplhabet.Remove(1);
 
         //if (applicationManager != null)
         //{

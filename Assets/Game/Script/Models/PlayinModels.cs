@@ -30,7 +30,7 @@ public class PlayinModels : MonoBehaviour
         {
             Debug.Log(" Right >>>>>");
             ApplicationManager.Instance.GameManager.pop_UpPanel.SetActive(true);
-            
+            this.transform.parent.gameObject.SetActive(false);
 
         }
         else

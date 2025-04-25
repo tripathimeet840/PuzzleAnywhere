@@ -97,11 +97,11 @@ public class PlayingModelsCaptain : MonoBehaviour
         for (int i = 0; i < selectedPrefabsName.Count; i++)
         {
             preFab = Resources.Load<GameObject>(selectedPrefabsName[i]);
-            Debug.LogWarning("paying models pos " + PlayinModels[i].position+ "paying models Localpos " + PlayinModels[i].localPosition);
+            //Debug.LogWarning("paying models pos " + PlayinModels[i].position+ "paying models Localpos " + PlayinModels[i].localPosition);
             temp = Instantiate(preFab, PlayinModels[i].localPosition,Quaternion.identity,this.gameObject.transform);
-            Debug.LogWarning("  temp POS >>"+temp.transform.position+"playuing Models local pos " + PlayinModels[i].localPosition); 
+          //  Debug.LogWarning("  temp POS >>"+temp.transform.position+"playuing Models local pos " + PlayinModels[i].localPosition); 
             temp.transform.position = PlayinModels[i].localPosition;
-            Debug.LogWarning("  temp POS 2>>"+temp.transform.position);  
+          //  Debug.LogWarning("  temp POS 2>>"+temp.transform.position);  
             selectedPrefabs.Add(temp.GetComponent<PlayinModels>());
             selectedPrefabs[i].transform.localPosition = PlayinModels[i].localPosition;
         }
